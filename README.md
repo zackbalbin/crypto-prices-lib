@@ -7,11 +7,12 @@ A library for getting the price a cryptocurrency agaisnt another using the CoinG
 A example for getting the price of Ergo against Bitcoin
 
 ```rust
-let e: f64 = get_price("ergo", "bitcoin");
+let price: Option<f64> = get_price("ergo", "bitcoin");
+println!("{:?}", price);
 ```
 
 The result
 
 ```
-0.00009592777203047117
+Some(0.00009592777203047117)
 ```
