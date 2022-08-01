@@ -1,13 +1,16 @@
 use serde_json::{Value};
 
+/// The Coin Gecko API base url.
 const COIN_GECKO_BASE_URL: &str = "https://api.coingecko.com/api/v3/";
 
+/// Calls the Coin Gecko API and returns the response as a String. 
 fn request_coin_gecko_price(coin_one_id: &str, coin_two_id: &str) -> Result<String, reqwest::Error> {
     let url: String = format!("{}simple/price?ids={}&vs_currencies={}", COIN_GECKO_BASE_URL, coin_one_id, coin_two_id);
     let resp: String = reqwest::blocking::get(url)?.text()?;
     Ok(resp)
 }
 
+/// Parses the Coin Gecko API response and returns the price as a f64.
 fn get_coin_gecko_price(coin_one_id: &str, coin_two_id: &str) -> Option<f64> {
     let resp: Result<String, reqwest::Error> = request_coin_gecko_price(coin_one_id, coin_two_id);
     if resp.is_err() {
@@ -19,6 +22,7 @@ fn get_coin_gecko_price(coin_one_id: &str, coin_two_id: &str) -> Option<f64> {
     }
 }
 
+/// Returns the price of a coin against another coin.
 pub fn get_price(coin_one_id: &str, coin_two_id: &str) -> Option<f64> {
     let coin_one_price: Option<f64> = get_coin_gecko_price(coin_one_id, "usd");
     if coin_one_price.is_none() {
