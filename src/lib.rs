@@ -1,7 +1,7 @@
 use serde_json::{Value};
 
 /// The Coin Gecko API base url.
-const COIN_GECKO_BASE_URL: &str = "https://api.coingecko.com/api/v3/";
+pub const COIN_GECKO_BASE_URL: &str = "https://api.coingecko.com/api/v3/";
 
 /// Calls the Coin Gecko API and returns the price as a String. 
 fn request_coin_gecko_price(coin_one_id: &str, coin_two_id: &str) -> Result<String, reqwest::Error> {

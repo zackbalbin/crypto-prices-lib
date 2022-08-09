@@ -1,6 +1,9 @@
 # Crypto Prices Lib
 
-A library for getting the price a cryptocurrency agaisnt another using the CoinGecko API.
+### Docs
+
+Crate pubshlied [here](https://crates.io/crates/crypto-prices-lib)
+Docs are available [here](https://docs.rs/crypto-prices-lib)
 
 ### Example
 
