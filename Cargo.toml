@@ -1,6 +1,6 @@
 [package]
 name = "crypto-prices-lib"
-version = "0.4.1"
+version = "0.4.2"
 edition = "2021"
 description = "A SDK for getting prices of cryptocurrencies against another."
 documentation = "https://docs.rs/crypto-prices-lib"
